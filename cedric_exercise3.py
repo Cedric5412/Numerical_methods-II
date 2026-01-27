@@ -65,7 +65,7 @@ def upstream_scheme(x0, xmax, t0, tmax, u, dx, dt, tp, alpha, beta):
             plt.legend()
 
     plt.title(r'CTCS scheme for LAE: $\Delta x= {}$, $u = {} $, $\Delta t$ = {}, $\alpha$ ={}, ' \
-    r'$\beta$={}'.format(dt, u, round(dt, 2), alpha, beta))
+    r'$\beta$={}'.format(dx, u, round(dt, 2), alpha, beta))
 
     output_filename = os.path.join(output_folder, 'ctcs_laeq{}_{}.png'.format(alpha, beta))
     plt.savefig(output_filename)
@@ -79,6 +79,6 @@ t0 = 0
 tmax = 1000
 tp = 200
 
-upstream_scheme(x0, xmax, t0, tmax, u, dx, dt, tp, alpha=0, beta=1)
-upstream_scheme(x0, xmax, t0, tmax, u, dx, dt, tp, alpha=0.1, beta=1)
+upstream_scheme(x0, xmax, t0, tmax, u, dx, dt, tp, alpha=0.0, beta=1.0)
+upstream_scheme(x0, xmax, t0, tmax, u, dx, dt, tp, alpha=0.1, beta=1.0)
 upstream_scheme(x0, xmax, t0, tmax, u, dx, dt, tp, alpha=0.05, beta=0.53)
